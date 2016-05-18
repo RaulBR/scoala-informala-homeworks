@@ -8,7 +8,7 @@ package home5.homework;
 
 abstract class AbstractAccaunt {
 	
-
+	// TODO CODE REVIEW: pay attention to code formatting
 	private float balance=0;
 private float money;
 

@@ -10,6 +10,7 @@ public class LoanAccount extends AbstractAccaunt {
 
 	private int numberOfInstalents;
 	private float loanAmount;
+	// TODO CODE REVIEW: A real loan account is not aware of any running accounts.
 	RunningAccount rAccaunt = new RunningAccount();
 	/**
 	* The constructor of the class takes in two parameters:
@@ -50,7 +51,7 @@ public class LoanAccount extends AbstractAccaunt {
 	}
 
 	private void payDedLine(int dayOfTHeMonth, float ammoutPerInstalment)throws  PayIsLessException, InsuficentMoneyException {
-		if (dayOfTHeMonth > 20 ){
+		if (dayOfTHeMonth > 20 ){// TODO CODE REVIEW: attention to the words please. The not THe
 			withdrawMoney(ammoutPerInstalment()*0.5f/100f);
 		}
 		if( ammoutPerInstalment < ammoutPerInstalment()){

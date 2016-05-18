@@ -40,7 +40,7 @@ public class SavingsAccountTest {
 		account.addMoney(1000);
 		account.withdrawMoney(100f);
 		account.interest(4);
-		;
+		; // TODO CODE REVIEW: why is this semicolon here?
 		assertEquals(1000F+4*6f/100f/12-100f-100f*0.02f/100f,account.getBalance() , 0);
 	}
 }
