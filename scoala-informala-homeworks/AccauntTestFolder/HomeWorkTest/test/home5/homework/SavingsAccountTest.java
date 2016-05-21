@@ -6,41 +6,41 @@ import org.junit.Test;
 
 public class SavingsAccountTest {
 	@Test
-	public void AddMoneyTest() {
+	public void addMoneyTest() {
 		AbstractAccaunt account = new SavingsAccount();
 		account.addMoney(1000);
 		assertEquals(1000f,account.getBalance() , 0);
 	}
 
 	@Test
-	public void MonthlyFeeTest() throws InsuficentMoneyException {
+	public void monthlyFeeTest() throws InsuficentMoneyException {
 		SavingsAccount account = new SavingsAccount();
 		account.addMoney(1000);
 		account.monthlyFee(1);
 		assertEquals(1000F-1000f*0.02f/100f,account.getBalance() , 0);
 	}
 	@Test
-	public void WhidroulFeeTest() throws InsuficentMoneyException {
+	public void whidroulFeeTest() throws InsuficentMoneyException {
 		SavingsAccount account = new SavingsAccount();
-		account.addMoney(1000);
+		account.addMoney(1000f);
 		account.withdrawMoney(100f);
-		assertEquals(1000F-100f-100f*0.02f/100f,account.getBalance() , 0);
+		assertEquals(1000f-100f-100f*0.02f/100f,account.getBalance() , 0);
 	}
 	@Test
-	public void IntrestTest() {
+	public void intrestTest() {
 		SavingsAccount account = new SavingsAccount();
-		account.addMoney(1000);
+		account.addMoney(1000f);
 		account.interest(4);
 	
 		assertEquals(1000F+4*6f/100f/12,account.getBalance() , 0);
 	}
 	@Test
-	public void IntrestandWithdrowlTest() throws InsuficentMoneyException {
+	public void intrestandWithdrowlTest() throws InsuficentMoneyException {
 		SavingsAccount account = new SavingsAccount();
 		account.addMoney(1000);
 		account.withdrawMoney(100f);
 		account.interest(4);
-		; // TODO CODE REVIEW: why is this semicolon here?
+	
 		assertEquals(1000F+4*6f/100f/12-100f-100f*0.02f/100f,account.getBalance() , 0);
 	}
 }

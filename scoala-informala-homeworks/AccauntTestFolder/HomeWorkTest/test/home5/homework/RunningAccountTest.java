@@ -6,14 +6,14 @@ import org.junit.Test;
 
 public class RunningAccountTest {
 	@Test
-	public void AddMoneyTest() {
+	public void addMoneyTest() {
 		RunningAccount account = new RunningAccount();
 		account.addMoney(1000);
 		assertEquals(1000f,account.getBalance() , 0);
 	}
 
 	@Test
-	public void WithdrowMoneyTest() throws InsuficentMoneyException {
+	public void withdrowMoneyTest() throws InsuficentMoneyException {
 		RunningAccount account = new RunningAccount();
 		account.addMoney(1000);
 		account.withdrawMoney(1000);
@@ -26,7 +26,7 @@ public class RunningAccountTest {
 		
 	}
 	@Test
-	public void MonthlyFeeTest() throws InsuficentMoneyException {
+	public void monthlyFeeTest() throws InsuficentMoneyException {
 		RunningAccount account = new RunningAccount();
 		account.addMoney(1000);
 		account.monthlyFee(1);
