@@ -1,7 +1,5 @@
 package ro.sci.colections.homework;
 
-import java.text.ParseException;
-
 /**
  * This class is child class of {@link Employee}.
  * <p>
@@ -16,13 +14,7 @@ public class SrSoftwareEngineer extends Employee {
 
 	public SrSoftwareEngineer(String name, String hireDate, boolean parking) {
 		super("Sr Software Engineers", name, hireDate, parking);
-
-		try {
-			dateHandler(hireDate);
-		} catch (ParseException e) {
-			System.err.println("Date format is dd/mm/yyyy");
-			e.printStackTrace();
-		}
+	
 	}
 
 	
