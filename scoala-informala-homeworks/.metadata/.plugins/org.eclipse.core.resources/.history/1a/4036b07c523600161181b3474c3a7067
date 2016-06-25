@@ -1,0 +1,36 @@
+package ro.scii.iothred;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		VoteCommittee vote = new VoteCommittee();
+		vote.addCandidate("Muttley");
+		vote.addCandidate("Mr. Bean");
+		vote.addCandidate("Spirt Mona");
+
+		VoteBox voteBox = new VoteBox();
+		Thread t1= new Thread(new ThreadVote(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley")));
+		Thread t2= new Thread(new ThreadVote(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley")));
+		Thread t3= new Thread(new ThreadVote(new VoteBallot("2909763891982", "Burt Reynolds", "Mr. Bean")));
+		Thread t4= new Thread(new ThreadVote(new VoteBallot("0977187368992", "Ronaldo", "Spirt Mona")));
+		Thread t5= new Thread(new ThreadVote(new VoteBallot("9555682954009", "Stevie Wonder", "")));
+		Thread t6= new Thread(new ThreadVote(new VoteBallot("9555682954033", "Puscas Marin", "Suscracinscaia")));
+		Thread t7= new Thread(new ThreadVote(new VoteBallot("982037357397", "Dick Dastardly", "Muttley")));
+		Thread t8= new Thread(new ThreadVote(new VoteBallot("982037357397", "Scooby Doo", "Mr. Bean")));
+	t1.start();
+	t2.start();
+	t3.start();
+	t4.start();
+	t5.start();
+	t6.start();
+	t7.start();
+	t8.start();
+	
+		
+		//vote.countVotes();
+		//vote.print();
+
+	}
+
+}

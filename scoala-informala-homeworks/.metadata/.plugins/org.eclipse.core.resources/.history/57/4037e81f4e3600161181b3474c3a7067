@@ -1,0 +1,26 @@
+package ro.scii.iothred;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		VoteCommittee vote = new VoteCommittee();
+		vote.addCandidate("Muttley");
+		vote.addCandidate("Mr. Bean");
+		vote.addCandidate("Spirt Mona");
+		
+		VoteBox voteBox = new VoteBox();
+		new VoteThred(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley"));
+		new VoteThred(new VoteBallot("2909763891982", "Burt Reynolds", "Mr. Bean"));
+		new VoteThred(new VoteBallot("0977187368992", "Ronaldo", "Spirt Mona"));
+		new VoteThred(new VoteBallot("9555682954009", "Stevie Wonder", ""));
+		new VoteThred(new VoteBallot("9555682954033", "Puscas Marin", "Suscracinscaia"));
+		new VoteThred(new VoteBallot("982037357397", "Dick Dastardly", "Muttley"));
+		new VoteThred(new VoteBallot("982037357397", "Scooby Doo", "Mr. Bean"));
+
+		vote.countVotes();
+		vote.print();
+
+	}
+
+}

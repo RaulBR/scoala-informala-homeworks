@@ -1,0 +1,28 @@
+package ro.scii.iothred;
+
+public class VoteThred {
+
+
+	VoteBox box;
+
+	
+		public VoteThred(VoteBallot vote) {
+			
+			
+					new Thread() {
+						public void run() {
+							try {
+								Thread.sleep(50);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+						box.addVote(vote);
+						};
+					}.start();
+				
+			}
+
+		}
+
+	

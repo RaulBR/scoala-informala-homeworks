@@ -1,0 +1,61 @@
+package ro.scii.io.homework;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+/**
+ * This class writes and reads form a file("votes.txt"), line by line
+ * 
+ * @author Raul
+ *
+ */
+public class ReadWriteFile {
+	/**
+	 * This method writes a line of string to the fiel "votes.txt"
+	 * 
+	 * @param toWrite
+	 */
+	public void WriteData(String toWrite) {
+
+		try (BufferedWriter out = new BufferedWriter(new FileWriter("votes.txt", true))) {
+
+			out.write(toWrite);
+			out.newLine();
+
+			out.close();
+
+		} catch (IOException e) {
+			System.out.println("exception occoured" + e);
+		}
+	}
+
+	/**
+	 * This method reads all the line of the file "votes.txt" and it returns a
+	 * ArrayList<String> of thoues lines.
+	 * 
+	 * @return ArrayList<String>
+	 */
+	public ArrayList<String> readFile() {
+		ArrayList<String> reeadFile = new ArrayList<String>();
+		try (BufferedReader in = new BufferedReader(new FileReader("votes.txt"))) {
+			String line;
+			while ((line = in.readLine()) != null) {
+				reeadFile.add(line);
+			}
+			in.close();
+			return reeadFile;
+
+		} catch (Exception e) {
+			System.out.println("Cound not reead form file");
+
+		}
+
+		return reeadFile;
+
+	}
+
+}

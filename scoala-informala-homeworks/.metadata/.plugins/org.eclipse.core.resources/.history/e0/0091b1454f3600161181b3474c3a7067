@@ -1,0 +1,14 @@
+package ro.scii.iothred;
+
+public class ThreAdVote implements Runnable {
+
+	
+	
+	
+	@Override
+	public void run() {
+		
+		
+	}
+
+}

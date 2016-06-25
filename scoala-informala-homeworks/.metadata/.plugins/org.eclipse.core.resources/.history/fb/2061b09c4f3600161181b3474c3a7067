@@ -1,0 +1,18 @@
+package ro.scii.iothred;
+
+import java.util.Random;
+
+public class ThreAdVote implements Runnable {
+Random r= new Random();
+	int time;
+	 public ThreAdVote(VoteBallot vote) {
+		time=r.nextInt(4000);
+	}
+	
+	@Override
+	public void run() {
+		
+	
+	}
+
+}

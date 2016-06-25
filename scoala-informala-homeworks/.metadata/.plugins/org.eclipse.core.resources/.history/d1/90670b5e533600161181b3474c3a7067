@@ -1,0 +1,5 @@
+package ro.scii.iothred;
+
+public class VoteCommitteeThread {
+
+}

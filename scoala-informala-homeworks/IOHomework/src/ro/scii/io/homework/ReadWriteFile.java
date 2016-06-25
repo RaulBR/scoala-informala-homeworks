@@ -19,7 +19,7 @@ public class ReadWriteFile {
 	 * 
 	 * @param toWrite
 	 */
-	public void WriteData(String toWrite) {
+	public  void WriteData(String toWrite) {
 
 		try (BufferedWriter out = new BufferedWriter(new FileWriter("votes.txt", true))) {
 
@@ -39,7 +39,7 @@ public class ReadWriteFile {
 	 * 
 	 * @return ArrayList<String>
 	 */
-	public ArrayList<String> readFile() {
+	public synchronized ArrayList<String> readFile() {
 		ArrayList<String> reeadFile = new ArrayList<String>();
 		try (BufferedReader in = new BufferedReader(new FileReader("votes.txt"))) {
 			String line;

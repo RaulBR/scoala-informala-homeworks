@@ -13,7 +13,7 @@ import java.util.Map;
  * 
  * </p>
  * 
- * @example "0000000,Vasile Alexandri,Furpu Tin" 
+ * @example "0000000,Vasile Alexandri,Furpu Tin"
  * 
  * 
  * @author Raul
@@ -21,14 +21,15 @@ import java.util.Map;
  */
 public class VoteCommittee extends Election {
 
-	Map<String, Integer> votes = new HashMap<>();
+	//
 
 	/**
 	 * This method prints put the election results.
 	 *
 	 */
 	public void print() {
-		result(votes);
+		ReadWriteFile readFile = new ReadWriteFile();
+		result(voteCount(getCandidats(cnpCheck(readFile.readFile()))));
 	}
 
 	/**
@@ -63,8 +64,8 @@ public class VoteCommittee extends Election {
 	 * @param unCountedList
 	 *
 	 */
-	public Map<String, Integer> voteCount(ArrayList<String> unCountedList) {
-
+	public  Map<String, Integer> voteCount(ArrayList<String> unCountedList) {
+		Map<String, Integer> votes = new HashMap<>();
 		for (String temp : unCountedList) {
 			Integer count = votes.get(temp);
 			votes.put(temp, (count == null) ? 1 : count + 1);
@@ -82,7 +83,7 @@ public class VoteCommittee extends Election {
 	public ArrayList<String> cnpCheck(ArrayList<String> listToBeChecked) {
 		ArrayList<String> listCorrectVotes = new ArrayList<>();
 
-		for (int i = 0; i < listToBeChecked.size()-1; i++) {
+		for (int i = 0; i < listToBeChecked.size(); i++) {
 			String[] check = listToBeChecked.get(i).split(",");
 			String verify = check[0];
 			boolean duplicat = false;
@@ -127,8 +128,7 @@ public class VoteCommittee extends Election {
 
 	public void countVotes() {
 		ReadWriteFile readFile = new ReadWriteFile();
-
-		votes = voteCount(getCandidats(cnpCheck(readFile.readFile())));
+		result(voteCount(getCandidats(cnpCheck(readFile.readFile()))));
 
 	}
 }

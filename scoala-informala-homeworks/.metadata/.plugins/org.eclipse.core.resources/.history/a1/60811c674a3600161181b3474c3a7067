@@ -1,0 +1,28 @@
+package src.ro.scii.io.homework;
+
+import java.util.ArrayList;
+/**
+ * This clas is the parrent cas of { {@link VoteCommittee}
+ * <p>
+ * It adds candidates to a list.
+ * </p>
+ * 
+ * @author Raul
+ *
+ */
+public class Election {
+ArrayList<String> candidates= new ArrayList<>();
+/**
+ * This method add's candidates to a list
+ * @param candidate
+ */
+
+	public void addCandidate(String candidate) {
+		candidates.add(candidate);
+		
+	}
+	public ArrayList<String> getCandidatesList() {
+		return candidates;
+	}
+
+}

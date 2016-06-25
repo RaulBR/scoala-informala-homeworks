@@ -1,0 +1,9 @@
+package ro.scii.iothred;
+
+public class Snippet {
+	VoteCommittee vote = new VoteCommittee();
+			vote.addCandidate("Muttley");
+			vote.addCandidate("Mr. Bean");
+			vote.addCandidate("Spirt Mona");
+}
+

@@ -1,0 +1,45 @@
+package ro.scii.io;
+
+/**
+ * This class simulates an open vote ballot
+ * 
+ * 
+ * @author Raul
+ *
+ */
+public class VoteBallot {
+	private String cnp;
+	private String votersName;
+	private String Candidate;
+	/**
+	 * The constructor takes in the person's details and the vote he iscasting
+	 * @param cnp
+	 * @param votersName
+	 * @param candidate
+	 */
+	
+		public VoteBallot(String cnp, String votersName, String candidate) {
+
+		this.cnp = cnp;
+		this.votersName = votersName;
+		this.Candidate = candidate;
+
+	}
+
+	public String getCnp() {
+		return cnp;
+	}
+
+	public void setCnp(String cnp) {
+		this.cnp = cnp;
+	}
+
+	public String getVotersName() {
+		return votersName;
+	}
+
+	public String getCandidate() {
+		return Candidate;
+	}
+
+}

@@ -15,7 +15,8 @@ public class VoteBox {
 	 * 
 	 * @param votBallet
 	 */
-	public void addVote(VoteBallot votBallet) {
+	public synchronized void addVote(VoteBallot votBallet) {
+
 		ReadWriteFile write = new ReadWriteFile();
 
 		String candidate = votBallet.getCandidate();

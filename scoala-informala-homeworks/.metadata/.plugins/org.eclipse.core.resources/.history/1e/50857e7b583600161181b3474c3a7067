@@ -1,0 +1,27 @@
+package ro.scii.iothred;
+
+public class VoteCommitteeThread implements Runnable{
+	
+	
+	
+	public void run() {
+		
+		while(1==1){
+		try{
+			
+			Thread.sleep(5000);
+			VoteCommittee vote = new VoteCommittee();
+			vote.addCandidate("Muttley");
+			vote.addCandidate("Mr. Bean");
+			vote.addCandidate("Spirt Mona");
+					vote.countVotes();
+					vote.print();
+		} catch(Exception e){
+			
+		}
+	
+	
+		
+	}
+	}
+}

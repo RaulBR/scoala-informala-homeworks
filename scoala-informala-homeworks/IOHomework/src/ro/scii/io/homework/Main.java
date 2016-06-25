@@ -3,23 +3,47 @@ package ro.scii.io.homework;
 public class Main {
 
 	public static void main(String[] args) {
-		
+
 		VoteCommittee vote = new VoteCommittee();
 		vote.addCandidate("Muttley");
 		vote.addCandidate("Mr. Bean");
 		vote.addCandidate("Spirt Mona");
-		
-		VoteBox voteBox = new VoteBox();
-		voteBox.addVote(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley"));
-		voteBox.addVote(new VoteBallot("2909763891982", "Burt Reynolds", "Mr. Bean"));
-		voteBox.addVote(new VoteBallot("0977187368992", "Ronaldo", "Spirt Mona"));
-		voteBox.addVote(new VoteBallot("9555682954009", "Stevie Wonder", ""));
-		voteBox.addVote(new VoteBallot("9555682954033", "Puscas Marin", "Suscracinscaia"));
-		voteBox.addVote(new VoteBallot("982037357397", "Dick Dastardly", "Muttley"));
-		voteBox.addVote(new VoteBallot("982037357397", "Scooby Doo", "Mr. Bean"));
+		new Thread() {
 
-		vote.countVotes();
-		vote.print();
+			public void run() {
+
+				for (int i = 0; i < 10; i++) {
+					try {
+
+						Thread.sleep(5 * 1000);
+
+						System.out.println("new");
+						vote.countVotes();
+
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					;
+				}
+			}
+		}.start();
+
+		Thread t1 = new Thread(new ThreadVote(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley")));
+		Thread t2 = new Thread(new ThreadVote(new VoteBallot("2909763891982", "Burt Reynolds", "Mr. Bean")));
+		Thread t3 = new Thread(new ThreadVote(new VoteBallot("0977187368992", "Ronaldo", "Spirt Mona")));
+		Thread t4 = new Thread(new ThreadVote(new VoteBallot("9555682954009", "Stevie Wonder", "")));
+		Thread t5 = new Thread(new ThreadVote(new VoteBallot("9555682954033", "Puscas Marin", "Suscracinscaia")));
+		Thread t6 = new Thread(new ThreadVote(new VoteBallot("982037357397", "Dick Dastardly", "Muttley")));
+		Thread t7 = new Thread(new ThreadVote(new VoteBallot("982037357397", "Scooby Doo", "Mr. Bean")));
+		Thread t8 = new Thread(new ThreadVote(new VoteBallot("982037544533", "SPuscas Marin", "Mr. Bean")));
+		t1.start();
+		t2.start();
+		t3.start();
+		t4.start();
+		t5.start();
+		t6.start();
+		t7.start();
+		t8.start();
 
 	}
 

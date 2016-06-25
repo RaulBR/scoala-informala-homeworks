@@ -1,0 +1,47 @@
+package ro.scii.io.homework;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		VoteCommittee vote = new VoteCommittee();
+		vote.addCandidate("Muttley");
+		vote.addCandidate("Mr. Bean");
+		vote.addCandidate("Spirt Mona");
+//		new Thread() {
+//
+//			public void run() {
+//
+//				for (int i = 0; i < 10; i++) {
+//					try {
+//
+//						Thread.sleep(5 * 1000);
+//
+//						System.out.println("new");
+//						vote.countVotes();
+//						// vote.print();
+//
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//					}
+//					;
+//				}
+//			}
+//		}.start();
+		
+VoteBox box=new VoteBox();
+		box.addVote(new VoteBallot("1982037357397", "Dick Dastardly", "Muttley"));
+		box.addVote(new VoteBallot("2909763891982", "Burt Reynolds", "Mr. Bean"));
+		box.addVote(new VoteBallot("0977187368992", "Ronaldo", "Spirt Mona"));
+		box.addVote(new VoteBallot("9555682954009", "Stevie Wonder", ""));
+		box.addVote(new VoteBallot("9555682954033", "Puscas Marin", "Suscracinscaia"));
+		box.addVote(new VoteBallot("982037357397", "Dick Dastardly", "Muttley"));
+		box.addVote(new VoteBallot("982037357397", "Scooby Doo", "Mr. Bean"));
+
+		vote.countVotes();
+
+	}
+
+}

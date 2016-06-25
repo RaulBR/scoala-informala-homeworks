@@ -1,0 +1,10 @@
+package ro.scii.iothred;
+
+public class VoteCommitteeThread implements Runnable{
+	
+	
+	
+	public void run() {
+		
+	}
+}
