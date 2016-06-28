@@ -19,7 +19,7 @@ public class ReadWriteFile {
 	 * 
 	 * @param toWrite
 	 */
-	public  void WriteData(String toWrite) {
+	public synchronized void WriteData(String toWrite) {
 
 		try (BufferedWriter out = new BufferedWriter(new FileWriter("votes.txt", true))) {
 
