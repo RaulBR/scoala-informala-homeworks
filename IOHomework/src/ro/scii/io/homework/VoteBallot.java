@@ -1,11 +1,24 @@
 package ro.scii.io.homework;
 
-public class VoteBallet {
+/**
+ * This class simulates an open vote ballot
+ * 
+ * 
+ * @author Raul
+ *
+ */
+public class VoteBallot {
 	private String cnp;
 	private String votersName;
 	private String Candidate;
-
-	public VoteBallet(String cnp, String votersName, String candidate) {
+	/**
+	 * The constructor takes in the person's details and the vote he iscasting
+	 * @param cnp
+	 * @param votersName
+	 * @param candidate
+	 */
+	
+		public VoteBallot(String cnp, String votersName, String candidate) {
 
 		this.cnp = cnp;
 		this.votersName = votersName;

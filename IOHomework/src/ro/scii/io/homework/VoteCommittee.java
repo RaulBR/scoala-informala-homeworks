@@ -83,7 +83,7 @@ public class VoteCommittee extends Election {
 	public ArrayList<String> cnpCheck(ArrayList<String> listToBeChecked) {
 		ArrayList<String> listCorrectVotes = new ArrayList<>();
 
-		for (int i = 0; i < listToBeChecked.size(); i++) {
+		for (int i = 0; i < listToBeChecked.size()-1; i++) {
 			String[] check = listToBeChecked.get(i).split(",");
 			String verify = check[0];
 			boolean duplicat = false;
