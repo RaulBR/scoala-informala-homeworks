@@ -44,6 +44,7 @@ public class VoteCommittee extends Election {
 		ArrayList<String> candidates = new ArrayList<>();
 		for (String s : cnpCheched) {
 			for (String candidate : getCandidatesList()) {
+				// TODO CODE REVIEW: You should call split only one and reuse the resulting array. Calling it 3 times in every cycle is not ok.
 				if (candidate.equals(s.split(",")[2])) {
 
 					if (!s.split(",")[2].equals("Null vote")) {

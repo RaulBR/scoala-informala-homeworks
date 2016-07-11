@@ -14,6 +14,7 @@ import java.util.ArrayList;
  *
  */
 public class ReadWriteFile {
+	// TODO CODE REVIEW: Since when do methods start with capital letters!?
 	/**
 	 * This method writes a line of string to the fiel "votes.txt"
 	 * 
@@ -40,6 +41,7 @@ public class ReadWriteFile {
 	 * @return ArrayList<String>
 	 */
 	public synchronized ArrayList<String> readFile() {
+		// TODO CODE REVIEW: Check your spelling. Code should be organized and clean.
 		ArrayList<String> reeadFile = new ArrayList<String>();
 		try (BufferedReader in = new BufferedReader(new FileReader("votes.txt"))) {
 			String line;
